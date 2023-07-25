@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import App from './App.tsx'
+import App from './App';
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000',
+  uri: 'https://clone-twitter-graphql.onrender.com/',
   cache: new InMemoryCache(),
 });
 
