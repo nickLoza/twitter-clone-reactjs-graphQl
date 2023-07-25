@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+	background-color: #000000;
+	color: #fff;
+}
+
+
+.twitter-bg{
+	background-color: #1D9BF0;
+}
+
+.twitter-color{
+	color: #1D9BF0;
+}
+
+
+
+.invisible-scrollbar::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.invisible-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* You can use any color here if you want a background for the track */
+}
+
+.invisible-scrollbar::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+/* For Firefox */
+/* Note: Firefox doesn't have individual scrollbar styling options like WebKit */
+/* The following styles will make the scrollbar thin and transparent */
+/* But it might still show a very thin, subtle scrollbar in some cases */
+/* You can consider using a Firefox extension like 'Scrollbar Customizer' for more advanced styling */
+.invisible-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
