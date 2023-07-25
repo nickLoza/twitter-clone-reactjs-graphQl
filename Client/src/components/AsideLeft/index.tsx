@@ -41,7 +41,7 @@ function AsideLeft() {
               </li>
             ))}
             <li>
-                <a href="https://github.com/nickLoza/twitter-clone" target="_blank" className="flex items-center gap-x-4 p-2 rounded-xl hover:bg-[#ffffff20] transition duration-350" >
+                <a href="https://github.com/nickLoza/twitter-clone-reactjs-graphQl" target="_blank" className="flex items-center gap-x-4 p-2 rounded-xl hover:bg-[#ffffff20] transition duration-350" >
                   <AiOutlineGithub/>
                   <span className="hidden lg:block text-xl">Repository</span>
                 </a>
