@@ -6,7 +6,7 @@ import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 
 const client = new ApolloClient({
-  uri: 'https://clone-twitter-graphql.onrender.com/',
+  uri: 'https://twitter-clone-reactjs-graphql.up.railway.app/',
   cache: new InMemoryCache(),
 });
 
