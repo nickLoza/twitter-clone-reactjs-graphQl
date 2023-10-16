@@ -22,7 +22,7 @@ function AsideRight() {
 
 	const { loading, error, data } = useQuery(ALL_USERS);
 
-	if (loading) return <Spinner/>;
+	if (loading) return <div className="hidden lg:flex m-auto w-[100px]"><Spinner/></div>;
  	if (error) return <p>Error : {error.message}</p>;
 
 	return (
@@ -34,7 +34,7 @@ function AsideRight() {
 
 			<div className="bg-[#16181C] p-4 rounded-xl">
 				<p className="text-2xl font-bold">Get Verified</p>
-				<p className="font-semibold mt-2">Suscribe to unloock new features</p>
+				<p className="font-semibold mt-2">Suscribe to unlock new features</p>
 				<button className="font-semibold twitter-bg px-4 py-2 mt-2 rounded-full">Get Verified</button>
 			</div>
 
