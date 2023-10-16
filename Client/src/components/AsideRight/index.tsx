@@ -3,6 +3,7 @@ import { topHashtags,  } from "../../db/twitterDB";
 import { useQuery, gql } from '@apollo/client';
 import { UserItemsType } from "../../modules/types";
 import { Link } from "react-router-dom";
+import Spinner from "../Spinner";
 
 
 const ALL_USERS = gql`
@@ -21,11 +22,11 @@ function AsideRight() {
 
 	const { loading, error, data } = useQuery(ALL_USERS);
 
-	if (loading) return <p>Loading...</p>;
+	if (loading) return <Spinner/>;
  	if (error) return <p>Error : {error.message}</p>;
 
 	return (
-		<aside className="hidden sticky right-0 top-0 max-w-[375px] h-screen lg:flex flex-col  gap-y-4 overflow-hidden px-4 py-2 overflow-y-auto invisible-scrollbar">
+		<aside className="sticky right-0 top-0 w-[475px] h-screen lg:flex flex-col gap-y-4 overflow-hidden px-4 py-2 overflow-y-auto invisible-scrollbar hidden lg:flex pb-[75px]">
 			<div className="flex gap-x-4 px-8 py-2 rounded-full items-center bg-[#16181C]">
 				<BsSearch/>
 				<input className="bg-transparent" type="text" placeholder="Search Twitter"/>
@@ -37,7 +38,7 @@ function AsideRight() {
 				<button className="font-semibold twitter-bg px-4 py-2 mt-2 rounded-full">Get Verified</button>
 			</div>
 
-			<div className="bg-[#16181C] p-4 rounded-xl">
+			<div className="bg-[#16181C] p-4 rounded-xl my-2">
 				<p className="text-xl font-bold  mb-3">What´s happening</p>
 				<div>
 					{topHashtags.map((item,i)=>(

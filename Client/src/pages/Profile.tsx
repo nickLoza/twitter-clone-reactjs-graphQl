@@ -7,6 +7,7 @@ import { useQuery, gql } from '@apollo/client';
 
 import { PostsType } from "../modules/types";
 import { useNavigate, useParams } from "react-router-dom"
+import Spinner from "../components/Spinner"
 
 const USER_PROFILE = gql`
   query UserProfile($username: String!) {
@@ -43,7 +44,7 @@ function Profile() {
 
 
 
- 	if (loading) return <p>Loading...</p>;
+ 	if (loading) return <Spinner/>;
   if (error) return <p>Error : {error.message}</p>;
 
   function handleOnClickBack(){
@@ -93,8 +94,8 @@ function Profile() {
 
 			<section>
 			{data.userProfile[0].posts.map((item:PostsType, i:number) => (
-	        <div className="flex mt-4 pb-2 border-gray-600 border-b-[1px]" key={i}>
-	        	<img className="self-start mr-2" src={data.userProfile[0].profileImg} alt="account" height={50} width={50}/>
+	        <div className="flex mt-4 pb-2 border-gray-600 border-b-[1px] pr-[25px]" key={i}>
+	        	<img className="self-start" src={data.userProfile[0].profileImg} alt="account" height={50} width={50}/>
 	        	<div className="mt-2">
 	        		<div className="flex gap-x-2">
 	        			<p className="font-semibold">{data.userProfile[0].name}</p>

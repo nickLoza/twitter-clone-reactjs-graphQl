@@ -10,6 +10,7 @@ import { useQuery, gql } from '@apollo/client';
 
 import { PostsItemsTypes } from "../modules/types";
 import { Link, useNavigate } from "react-router-dom";
+import Spinner from "../components/Spinner";
 
 const ALL_POSTS = gql`
   query AllPosts {
@@ -36,7 +37,7 @@ function Home() {
 
   const { loading, error, data } = useQuery(ALL_POSTS);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner/>;
   if (error) return <p>Error : {error.message}</p>;
 
   const handleInputChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -84,8 +85,8 @@ function Home() {
 
       {data.allPosts.map((item:PostsItemsTypes, i:number) => (
         item.posts.length > 0 && 
-        <div className="flex mt-4 pb-2 border-gray-600 border-b-[1px]" key={i}>
-          <img className="self-start mr-2" src={item.profileImg} alt="account" height={50} width={50}/>
+        <div className="flex mt-4 pb-2 border-gray-600 border-b-[1px] pr-[25px]" key={i}>
+          <img className="self-start" src={item.profileImg} alt="account" height={50} width={50}/>
           <div className="mt-2">
             <div className="flex gap-x-2">
               <Link className="font-semibold hover:text-[#1D9BF0]" to={`/profile/${item.username}`}>{item.name}</Link>

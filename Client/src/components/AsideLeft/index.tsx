@@ -24,7 +24,7 @@ const asideItems = [
 
 function AsideLeft() {
   return (
-    <aside className="sticky max-w-[75px] lg:min-w-[270px] h-screen left-0 top-0 flex flex-col justify-between p-6 ">
+    <aside className="sticky lg:min-w-[270px] h-screen left-0 top-0 flex-col justify-between p-6 hidden lg:flex">
       {/*top*/}
       <nav className="flex flex-col items-center lg:items-start text-3xl">
         <Link className="lg:ml-3" to={"/home"}>
